@@ -12,16 +12,18 @@
 
      <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
      <link rel="stylesheet" href="style.css">
-     <script src="skrypt.js"></script>
+     
 	 <link rel="preconnect" href="https://fonts.gstatic.com">
+	<script src="timer.js"></script>
+	 
 <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 	 
 
   </head>
-  <body>
+  <<body style="overflow-y:hidden;" onload="odliczanie();">
 		<div id="container" >
 		<header>
-			<div id="header"><h1> Moje konto</h1></div>
+			<div id="header"><h1> Twoje konto</h1></div>
 		</header>
 		<div class="menu">
 			<div class="option">przychod</div> 
@@ -30,20 +32,34 @@
 			<div class="option">ustawienia</div> 
 			<div class="option">wyloguj</div> 
 			<div style="clear:both;"></div>
+			
 		</div>
 				<div class="prrentRectangle">
 					<div class="leftRectangle">
-						<div class="tile">Twoje dochody w tym miesiacu to: 100zł</div>
-						<div class="tile">Twoje wydatki w tym miesiacu to: 100zł</div>
+						<div class="tile1">
+							<div class="napis">Twoje dochody w tym miesiacu to 100zł</div>
+							<div class="picture"><img src="wzrost.png"></div>
+							<div style="clear:both;"></div>
+						</div>
+						
+						
+						
+						<div class="tile2">
+							<div class="napis">Twoje wydatki w tym miesiacu to 100zł</div>
+							<div class="picture"><img src="spadek.png"></div>
+							<div style="clear:both;"></div>
+						</div>
 					
 					
 					</div>
 					<div class="rightRectangle">
 						<div class="data">01.06.2021</div>
-						<div class="zegar">12:00:00</div>
+						<div id="zegar">12:00:00</div> 
 					</div>
 					<div style="clear:both;"></div>
 				</div>
+				
+				<div id="footer">Wszystkie prawa zastrzeżone, kontakt karojecz@gmail.com</div>
 		</div>
   </body>
 
