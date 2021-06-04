@@ -54,23 +54,31 @@ html,body
 	width:61%;
 	
 	
+	
 }
 .rightRectangle
 {
 	float:left;
+	width:39%;
+	
+	
 }
-.data
+#data
 {
 	font-size:30px;
-	letter-spacing:10px;
-	padding:50px;
+	letter-spacing:15px;
+	padding-top:150px;
+	padding-left:110px;
+	color:black;
 	
 }
 #zegar
 {
-	font-size:80px;
+	font-size:100px;
 	letter-spacing:10px;
-	padding:50px;
+	padding-left:50px;
+	padding-top:10px;
+	color:black;
 	
 }
 .tile1
@@ -103,7 +111,7 @@ html,body
 .tile1:hover
 {
 	background-color:#323232;
-	
+	cursor:pointer;
 	
 }
 .tile2:hover
