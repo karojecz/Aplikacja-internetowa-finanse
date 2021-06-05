@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+  <head>
+
+     <meta charset="utf-8">
+     <title>Moja witryna</title>
+
+     <meta name="description" content="Opis zawartości strony dla wyszukiwarek">
+     <meta name="keywords" content="słowa, kluczowe, opisujące, zawartość">
+     <meta name="author" content="Jan Programista">
+
+     <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+     <link rel="stylesheet" href="style.css">
+     
+	 <link rel="preconnect" href="https://fonts.gstatic.com">
+	<script src="timer.js"></script>
+	
+	<script type = "text/javascript">  
+	function myfunction() { 
+	var dzisiaj = new Date();
+		
+		var dzien = dzisiaj.getDate();
+		if (dzien<10) dzien = "0"+dzien;
+		var miesiac = dzisiaj.getMonth()+1;
+		if (miesiac<10) miesiac = "0"+miesiac;
+		var rok = dzisiaj.getFullYear();
+	
+	document.getElementById('data').value = dzien+"/"+miesiac+"/"+rok;;
+         }  
+	</script>  
+
+
+	 
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+	 
+
+  </head>
+  
+  <body onload="myfunction();">
+  
+	<input id="data" type="text" >
+	
+	<input type = "button" onclick = "myfunction()" value = "Display">  
+  </body>
+
+</html>

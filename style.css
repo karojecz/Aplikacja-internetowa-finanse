@@ -22,6 +22,7 @@ html,body
 	text-align:center;	
 	color:#0c0c0c;
 	
+	
 }
 .menu
 {
@@ -175,6 +176,17 @@ input[type=password]:focus
 	box-shadow:3px 3px 8px 5px rgba(0,0,0,0.93);
 	color:#E6E3E2;
 }
+input[type=radio]
+{
+	cursor: pointer;
+	color: white;
+	
+}
+label
+{
+	color:#EEECEC;
+}
+
 
 input[type=submit],
 input[type=button]
@@ -246,9 +258,73 @@ span
 	font-size:22px;
 	text-align:center;
 	
+	
 }
 h1
 {
 	text-align:center;
 	margin:0px;
+}
+.custom_box
+{
+	height:610px;
+	width:1000px;
+	margin:auto;
+	border: 1px solid #262626;
+	color: #EEECEC;
+}
+.left_box
+{
+	height:610px;
+	width:610px;
+	float:left;
+	border-right: 1px solid #262626;
+}
+.right_box
+{
+	height:610px;
+	width:389px;
+	float:left;
+	
+}
+.upper_box
+{
+	height:389px;
+	width:389;
+	padding-left:40px;
+	
+	border-bottom: 1px solid #262626;
+}
+.down_box
+{
+	height:219px;
+	width:389px;
+}
+.small_title
+{
+	text-align:center;
+	font-size:30px;
+	height:70px;
+	padding-top:30px;
+	width:610px;
+	
+	letter-spacing:1px;
+}
+.category
+{
+	height:310px;
+	width:580px;
+	padding-left:30px;
+	
+	font-size:15px;
+}
+.category p
+{
+	font-size:20px;
+}
+.column
+{
+	float:left;
+	margin:10px;
+	
 }
