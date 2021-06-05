@@ -176,7 +176,8 @@ input[type=password]:focus
 	color:#E6E3E2;
 }
 
-input[type=submit]
+input[type=submit],
+input[type=button]
 {
 	width: 300px;
 	background-color: #36b03c;
@@ -191,13 +192,14 @@ input[type=submit]
 	outline: none;
 }
 
+input[type=button]:focus,
 input[type=submit]:focus
 {
 	-webkit-box-shadow: 3px 3px 8px 5px rgba(0,0,0,0.28);
 	-moz-box-shadow: 3px 3px 8px 5px rgba(0,0,0,0.28);
 	box-shadow: 3px 3px 8px 5px rgba(0,0,0,0.28);
 }
-
+input[type=button]:hover,
 input[type=submit]:hover
 {
 	background-color: #37b93d;
