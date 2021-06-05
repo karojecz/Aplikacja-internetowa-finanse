@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>Stylizowanie formularzy</title>
+	<meta name="description" content="Nauka podstawowego stylizowania elementów formularzy" />
+	<meta name="keywords" content="css, odcinek" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	
+</head>
+
+<body>
+
+	<div id="box">
+		<form>
+			<div><h1>Rejestracja</h1></div>
+			
+			<span><br/>Wprowadz adres email.</span>
+			
+			<input type="email" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='adres@domena'" required name="adres">
+			
+			<span><br/>Wprowadz login.</span>
+			
+			<input type="text" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'" name="login" >
+			
+			<span><br/>Wprowadz hasło.</span>
+			
+			<input type="password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" name="haslo" pattern=".{5,}"   required title="8 characters minimum">
+			
+			
+			
+			
+			
+			<input type="submit" value="Załóż konto">
+			
+			
+			
+		</form>
+	</div>
+	
+</body>
+</html>
