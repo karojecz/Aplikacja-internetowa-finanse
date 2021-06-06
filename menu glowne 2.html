@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+  <head>
+
+     <meta charset="utf-8">
+     <title>Moja witryna</title>
+
+     <meta name="description" content="Opis zawartości strony dla wyszukiwarek">
+     <meta name="keywords" content="słowa, kluczowe, opisujące, zawartość">
+     <meta name="author" content="Jan Programista">
+
+     <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+     <link rel="stylesheet" href="style.css">
+	 <link rel="stylesheet" href="css/fontello.css">
+     
+	 <link rel="preconnect" href="https://fonts.gstatic.com">
+	 <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap" rel="stylesheet">
+	
+	<script src="timer.js"></script>
+	<script type = "text/javascript">  
+	function odliczanie()
+	{
+		var dzisiaj = new Date();
+		
+		var dzien = dzisiaj.getDate();
+		var miesiac = dzisiaj.getMonth()+1;
+		var rok = dzisiaj.getFullYear();
+		
+		var godzina = dzisiaj.getHours();
+		if (godzina<10) godzina = "0"+godzina;
+		
+		var minuta = dzisiaj.getMinutes();
+		if (minuta<10) minuta = "0"+minuta;
+		
+		var sekunda = dzisiaj.getSeconds();
+		if (sekunda<10) sekunda = "0"+sekunda;
+		
+		document.getElementById("left_IN_down").innerHTML = godzina;
+		 
+		 document.getElementById("down_IN_down").innerHTML = ":"+minuta+":"+sekunda;
+		 document.getElementById("upper_IN_down").innerHTML = dzien+"/"+miesiac;
+		 
+		 setTimeout("odliczanie()",1000);
+	}
+	</script>
+	
+ 
+
+
+	 
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+	 
+
+  </head>
+  <body style="overflow-y:hidden;" onload="odliczanie();">
+	
+	<div class="custom_box">
+		<div class="left_box">
+			
+			<div class="small_title">Menu Główne</div>
+			
+				<div class="rectangle"><i class="demo-icon icon-calendar-plus-o"></i>
+					<p>Dodaj przychód</p>
+				
+				</div>
+				<div class="rectangle"><i class="demo-icon icon-calendar-minus-o"></i>
+					<p>Dodaj wydatek</p>
+				</div>
+				<div style="clear:both;"></div>
+				<div class="rectangle"><i class="demo-icon icon-money"></i> 
+					<p>Przegladaj bilans</p>
+				</div>
+				<div class="rectangle"><i class="demo-icon icon-wrench"></i> 
+					<p>Ustawienia</p>
+				</div>
+				<div style="clear:both;"></div>
+			
+
+		</div>
+		
+		<div class="right_box">
+			<div class="upper_box">
+				<div id="logout"><i class="demo-icon icon-off"></i> </div>
+				<p>W ostatnim miesiącu zaoszczedziłeś/straciłeś : .....zł.//funkcja łacząca sie z bilansem</P>
+			
+			</div>
+			
+			<div class="down_box">
+				<div id="left_IN_down">12</div>
+				<div id="right_IN_down">
+					<div id="upper_IN_down"></div>
+					<div id="down_IN_down">:00</div>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+			
+			</div>
+			
+		</div>
+		<div style="clear:both;"></div>
+	
+		
+	
+	
+	
+	
+  </body>
+
+</html>

@@ -269,7 +269,9 @@ h1
 {
 	height:610px;
 	width:1000px;
-	margin:auto;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
 	border: 1px solid #262626;
 	color: #EEECEC;
 }
@@ -291,14 +293,73 @@ h1
 {
 	height:389px;
 	width:389;
-	padding-left:40px;
-	
 	border-bottom: 1px solid #262626;
+	font-size:20px;
 }
+.upper_box p
+{
+	margin:50px;
+	text-align:left;
+}
+#logout
+{
+	height:50px;
+	width:389;
+	padding-top:10px;
+	padding-left:320px;
+	color:#cccccc;	
+}
+#logout:hover
+{
+	cursor:pointer;
+	color:white;	
+}
+
 .down_box
 {
 	height:219px;
 	width:389px;
+	font-family: 'Stint Ultra Condensed', cursive;
+}
+#left_IN_down
+{
+	height:179px;
+	width:116px;
+	border-right:  1px solid #515151;
+	
+	color:black;
+	float:left;
+	font-size:200px;
+	padding-left:110px;
+	padding-top:35px;
+	padding-bottom:5px;
+	padding-right:5px;
+}
+#right_IN_down
+{
+	float:left;
+}
+#upper_IN_down
+{
+	height:133px;
+	width:122px;
+	
+	color:black;
+	font-size:100px;
+	padding-left:30px;
+	border-bottom:  1px solid #515151;
+	
+}
+#down_IN_down
+{
+	height:35px;
+	width:152px;
+	
+	color:black;
+	font-size:90px;
+	padding-bottom:50px;
+	
+	
 }
 .small_title
 {
@@ -326,5 +387,44 @@ h1
 {
 	float:left;
 	margin:10px;
+	
+}
+.rectangle
+{
+	height:215px;
+	float:left;
+	width:305px;
+	text-align:center;
+	padding-top:40px;	
+	color:#cccccc;
+	position:relative;
+}
+.rectangle p
+{
+	height:100px;
+	width:305px;
+	color:black;
+	font-weight:bold;
+	font-size:30px;
+	text-align:center;
+	padding-top:30px;
+	position:absolute;
+	display:block;
+	background-color:#cccccc;
+	left:0px;
+	top:0px;
+	opacity:0;
+	transition: opacity 0.5s ease-in-out;
+}
+.rectangle:hover
+{
+	background-color:#535353;
+	
+	cursor:pointer;
+	opacity:0.5;
+}
+.rectangle:hover p
+{
+	opacity:0.8;
 	
 }
