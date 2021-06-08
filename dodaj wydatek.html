@@ -26,7 +26,7 @@
 		if (miesiac<10) miesiac = "0"+miesiac;
 		var rok = dzisiaj.getFullYear();
 	
-	document.getElementById('wprowadzDate').value = dzien+"/"+miesiac+"/"+rok;;
+	document.getElementById('wprowadzDate').value = dzien+"/"+miesiac+"/"+rok;
          }  
 	</script>  
 
@@ -41,8 +41,9 @@
 	<div class="custom_box">
 		<div class="left_box">
 			<div class="small_title">Dodaj wydatek</div>
-			<div class="category"><p>Wybierz kategorie:</p>
-			
+			<div class="category">
+				<fieldset>
+				<legend>Wybierz kategorie:</legend>
 				<div class="column">
 							<div>
 									  <input type="radio" id="jedzenie" name="drone" value="jedzenie"
@@ -139,32 +140,43 @@
 							</div>								
 						  
 						</div>
+						</fieldset>
 						<div style="clear:both;"></div>
 		</div>
+				<div id="pole_tekstowe">
+					<div><label for="komentarz">Uwagi:</label></div>
+					<textarea name="komentarz" id="komentarz" rows="7" cols="60"></textarea>
+				</div>
 		</div>
 		<div class="right_box">
 			<div class="upper_box">
-			
-			
-			<span><br/>Wprowadź kwote.</span>
-			
-			<input type="text" placeholder="kwota" onfocus="this.placeholder='kwota'" onblur="this.placeholder='kwota'" required name="adres">
-			
-			<br/>
-			<span><br/>Wprowadz date.</span>
-			
-			
-			<input id="wprowadzDate" type="text"  onfocus="this.placeholder='data'" onblur="this.placeholder='data'" required name="adres"> 
-			
-			
-			
-			
-			
+				<div class="inner_box">
+					<label for="kwota"> Wprowadź kwotę:</label>
+					<input type="text" placeholder="kwota" onfocus="this.placeholder='kwota'" onblur="this.placeholder='kwota'" required name="kwota">
 					
-			
+					<label for="wprowadzDate"> Wprowadź date:</label>
+					<input id="wprowadzDate" type="text"  onfocus="this.placeholder='data'" onblur="this.placeholder='data'" required name="wprowadzDate"> 
+					
+					<label for="platnosc"> Wybierz sposób płatności:</label>
+						<div>
+									  <input type="radio" id="karta" name="platnosc" value="karta"
+											 checked>
+									  <label for="karta">karta</label>
+							</div>
+							<div>
+									  <input type="radio" id="gotówka" name="platnosc" value="gotówka"
+											 checked>
+									  <label for="gotówka">gotówka</label>
+							</div>
+				</div>	
 			</div>
 			
-			<div class="down_box"></div>
+			<div class="down_box">
+				<div class="inner_box">
+						<input type="submit"  value="Dodaj" >
+						<input id="anuluj" type="button" value="anuluj" >
+				</div>
+			</div>
 			
 			</div>
 			

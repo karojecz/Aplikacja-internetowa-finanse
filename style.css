@@ -117,27 +117,16 @@ html,body
 	width:61%;
 	float:left;
 	text-align:left;
-	
-	
-	
 }
 .picture
 {
 	width:39%;
-	
 	float:left;
 	text-align:right;
 	
 }
 
-#footer
-{
-		text-align:center;
-		position:absolute;
-		bottom:0;
-		width:100%;	
-		background:#b5fbbd;	
-}
+
 
 input[type=text],
 input[type=password],
@@ -182,9 +171,15 @@ input[type=radio]
 	color: white;
 	
 }
+fieldset
+{
+	border:  1px solid #515151;
+}
+legend,
 label
 {
 	color:#EEECEC;
+	font-size:15px;
 }
 
 
@@ -296,6 +291,18 @@ h1
 	border-bottom: 1px solid #262626;
 	font-size:20px;
 }
+.inner_box
+{
+	padding-left:40px;
+	padding-top:40px;
+}
+.inner_box input
+{
+	margin-bottom:10px;
+	
+	
+	
+}
 .upper_box p
 {
 	margin:50px;
@@ -321,6 +328,22 @@ h1
 	width:389px;
 	font-family: 'Stint Ultra Condensed', cursive;
 }
+#komentarz
+{
+	resize:none;
+	
+}
+#pole_tekstowe 
+{
+	font-family: 'Lora', serif;	
+	font-size:20px;
+	padding-left:40px;
+	padding-top:10px;
+	height:150px;
+	width:500px;
+	
+	
+}
 #left_IN_down
 {
 	height:179px;
@@ -330,10 +353,10 @@ h1
 	color:black;
 	float:left;
 	font-size:200px;
-	padding-left:110px;
+	padding-left:95px;
 	padding-top:35px;
 	padding-bottom:5px;
-	padding-right:5px;
+	padding-right:20px;
 }
 #right_IN_down
 {
@@ -342,18 +365,19 @@ h1
 #upper_IN_down
 {
 	height:133px;
-	width:122px;
 	
+	width:147px;
 	color:black;
-	font-size:100px;
-	padding-left:30px;
+	font-size:80px;
+	padding-left:10px;
 	border-bottom:  1px solid #515151;
+	
 	
 }
 #down_IN_down
 {
 	height:35px;
-	width:152px;
+	width:157px;
 	
 	color:black;
 	font-size:90px;
@@ -373,9 +397,10 @@ h1
 }
 .category
 {
-	height:310px;
-	width:580px;
+	height:280px;
+	width:510px;
 	padding-left:30px;
+	padding-right:70px;
 	
 	font-size:15px;
 }
@@ -427,4 +452,8 @@ h1
 {
 	opacity:0.8;
 	
+}
+#anuluj
+{
+	background-color:red;
 }
