@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="pl">
+<head>
 
-  <head>
-
-    <meta charset="utf-8">
-     <title>Przeglądaj bilans</title>
-
-     <meta name="description" content="bilans miesięczny bilans roczny">
-     <meta name="keywords" content="bilans miesięczny bilans roczny">
-     <meta name="author" content="Karol Jęczmionka">
-
-     <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
-     <link rel="stylesheet" href="style.css">
-	 <link rel="stylesheet" href="css/fontello.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>Przeglądaj bilans</title>
+	<meta name="description" content="bilans miesięczny bilans roczny">
+	<meta name="keywords" content="bilans miesięczny bilans roczny">
+	<meta name="author" content="Karol Jęczmionka">
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="css_bootstramp/bootstrap.min.css">
+	<link rel="stylesheet" href="style_bootstamp.css">
+	
+	
+	<link rel="stylesheet" href="css/fontello.css">
      
 	 <link rel="preconnect" href="https://fonts.gstatic.com">
 	 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap" rel="stylesheet">
 	 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-
-	<script type="text/javascript">
+	
+	<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+		<script type="text/javascript">
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
@@ -59,38 +65,60 @@ function drawChart() {
   chart.draw(data, options);
 }
 </script>
-
-	 
-
-  </head>
-  <body>
-		<div id="container" >
-
-		<div class="menu">
-			<div class="option">dodaj przychód</div> 
-			<div class="option"> dodaj wydatek</div> 
-			<div class="option">ustawienia</div> 
-			<div class="option">wyloguj</div> 
-			<div class="dropdown">
-				  <button class="dropbtn">Wybierz okres</button>
-				  <div class="dropdown-content">
-					<a href="#">bieżący miesiąc</a>
-					<a href="#">poprzedni miesiąc</a>
-					<a href="#">bieżący rok</a>
-					<a href="#">niestandardowy</a>
-					
-				  </div>
-			</div>
-			<div style="clear:both;"></div>
-			
-		</div>
+	
+</head>
+<body>
+	<header>
+	
+		<nav class="navbar navbar-dark bg-jumpers navbar-expand-lg">
+		
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		
+			<div class="collapse navbar-collapse" id="mainmenu">
 				
-					<div class="leftRectangle">
-						<table >
+				<div class="navbar-nav mr-auto">
+					
+						<h2> Twój bilans </h2>
+					
+					
+				</div>
+			
+				<form class="form-inline">
+					
+					<button class="btn btn-outline-secondary mr-1" type="submit">Menu główne</button>
+					<button class="btn btn-outline-secondary mr-1" type="submit">Wyloguj</button>
+					
+					<div class="nav-item dropdown">
+					  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+						Wybierz okres
+					  </a>
+					  <div class="dropdown-menu bg-secondary">
+						<a class="dropdown-item" href="#">bierzący miesiąc</a>
+						<a class="dropdown-item" href="#">poprzedni miesiąc</a>
+						<a class="dropdown-item" href="#">bierzący rok</a>
+						<a class="dropdown-item" href="#">niestandardowy</a>
+					  </div>
+					</div>
+				</form>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row">
+					<div class="col-md-4 p-2">
+						<table class="table table-bordered table-dark ">
+							<caption>Wydatki</caption>
 						   <thead>
-								<caption>Wydatki</caption>
+								
 									
-								 <th>Kategoria</th> <th>sumy wydatków</th></tr>
+								<tr>
+									  <th scope="col">Kategoria</th>
+									  <th scope="col">sumy wydatków</th>
+
+								</tr>
 							  
 						   </thead>
 						   <tbody>
@@ -142,12 +170,20 @@ function drawChart() {
 							   <tr>
 								 <th>suma</th> <td id="sumaW">100</td> 
 							  </tr>
-							  
-						<table>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-4 p-2">
+						<table class="table table-bordered table-dark ">
+							<caption>Przychody</caption>
 						   <thead>
-								<caption>Przychody</caption>
-									
-								 <th>Kategoria</th> <th>sumy wydatków</th></tr>
+								
+								<tr>
+									  <th scope="col">Kategoria</th>
+									  <th scope="col">sumy przychodów</th>
+
+								</tr>
+								 
 							  
 						   </thead>
 						   <tbody>
@@ -199,36 +235,27 @@ function drawChart() {
 							   <tr>
 								 <th>suma</th> <td id="sumaP">100</td> 
 							  </tr>
-
- 
- 
-
- 
- 
-
 						   </tbody>
 						</table>
 					</div>
-					
-					<div class="rightRectangle">
+					<div class="col-lg-4 p-1">
 						<div id="piechart">
 							
 						</div>
-						<div id="bilans">
-						<label>Twój bilans w tym okresie wynosi: 000000.00 zł</label>
-						</br>
-						<label>UWAGA! wpadasz w długi</label>
-						</br>
-						<label>Świetnie! Udało Ci się zaoszczędzić</label>
-						
-						</div>
 					</div>
-					
-					<div style="clear:both;"></div>
-			
-				
-				
+			</div>
 		</div>
-  </body>
+	</main>
 
-</html>
+
+
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
+	
+</body>
+	</html>
