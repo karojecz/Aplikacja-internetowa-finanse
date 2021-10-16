@@ -1,3 +1,15 @@
+<?php
+
+	session_start();
+		
+		if (!isset($_SESSION['zalogowany']))
+	{
+		header('Location: index.php');
+		exit();
+	}
+	
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -36,11 +48,11 @@
 				
 				<div class="navbar-nav mr-auto">
 					
-						<h2>Menu Główne</h2>	
+						<h2><?php echo "Witaj ".$_SESSION['user'];  ?></h2>	
 				</div>
 			
 				<form class="form-inline">
-					<button class="btn btn-outline-secondary mr-1" type="submit">Wyloguj</button>
+					<a href="logout.php"><button class="btn btn-outline-secondary mr-1" type="button" >Wyloguj</button></a>
 				</form>
 			</div>
 	</nav>
@@ -68,7 +80,7 @@
 					<div class="col-md-6 p-2">
 					
 						<figure>
-							<a  href="#"><i class="demo-icon icon-calendar-minus-o"></i>
+							<a  href="dodaj_wydatek.php"><i class="demo-icon icon-calendar-minus-o"></i>
 							<p>Dodaj wydatek</p>
 							</a>
 						</figure>
@@ -97,15 +109,7 @@
 						</figure>
 					
 					</div>
-
-
-
-
-
-
-					
-
-				
+	
 				</div>
 				
 			</div>	

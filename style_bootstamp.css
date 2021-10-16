@@ -4,6 +4,12 @@ body
 	font-family: 'Lora', serif;	
 	color:#D3D3D3;
 }
+.error
+{
+	color:red;
+	margin-top:10px;
+	margin-bottom:10px;
+}
 .jumpers
 {
 	text-align: center;

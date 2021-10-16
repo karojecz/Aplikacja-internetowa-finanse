@@ -1,11 +1,24 @@
+<?php
+		session_start();
+	
+	if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
+	{
+		header('Location: menu_glowne.php');
+		exit();
+	}
+
+?>
+
+
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
 	<meta charset="utf-8" />
-	<title>Rejstracja</title>
-	<meta name="description" content="Rejestracja" />
-	<meta name="keywords" content="Rejestracja" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Logowanie</title>
+	<meta name="description" content="formularz logowania" />
+	<meta name="keywords" content="formularz logowania" />
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
 		
 	<link rel="stylesheet" href="css_bootstramp/bootstrap.min.css">
 	<link rel="stylesheet" href="style_bootstamp.css">
@@ -25,34 +38,38 @@
 				<div class="myform form ">
 					 <div class="logo mb-3">
 						 <div class="col-md-12 text-center">
-							<h1>Rejestracja</h1>
+							<h1>Logowanie</h1>
 						 </div>
 					</div>
-                   <form   name="login">
+                   <form  name="login" action="logowanie.php" method="post">
                            <div class="form-group">
-                              <label for="email">Adres email</label>
-                              <input type="email" name="email"   class="form-control" id="email"  placeholder="Wprowadź email">
-                           </div>
-						   <div class="form-group">
-                              <label for="Login">Login</label>
-                              <input type="email" name="email" id="Login"  class="form-control"   placeholder="Wprowadź Login">
+                              <label for="email" >Adres email</label>
+                              <input type="email" name="email" id="email"  class="form-control" placeholder="Wprowadź email">
                            </div>
                            <div class="form-group">
-                              <label for="Hasło">Hasło</label>
-                              <input type="password" name="password" id="Hasło"  class="form-control"  placeholder="Wprowadź hasło">
+                              <label for="password"  >Hasło</label>
+                              <input type="password" id="password" name="password"  class="form-control" placeholder="Wprowadź hasło">
                            </div>
                            <div class="form-group">
                               
                            </div>
                            <div class="col-md-12 text-center ">
-                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Zarejestruj się</button>
+                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Zaloguj się</button>
                            </div>
 
                            
                            <div class="form-group">
-                              <p class="text-center">Masz już konto? <a href="#" id="signup">Zaluguj się.</a></p>
+                              <p class="text-center">Nie masz konta? <a href="#" id="signup">Zarekjestruj się.</a></p>
                            </div>
-                        </form>
+                     </form>
+					 
+									<?php
+							if(isset($_SESSION['blad']))	echo $_SESSION['blad'];
+							
+							//echo $_SESSION['zalogowany'];
+							
+						?>
+						
                  
 				</div>
 			
