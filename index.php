@@ -38,39 +38,31 @@
 				<div class="myform form ">
 					 <div class="logo mb-3">
 						 <div class="col-md-12 text-center">
-							<h1>Logowanie</h1>
+							<h1>Sing in</h1>
 						 </div>
 					</div>
                    <form  name="login" action="logowanie.php" method="post">
                            <div class="form-group">
-                              <label for="email" >Adres email</label>
-                              <input type="email" name="email" id="email"  class="form-control" placeholder="Wprowadź email">
+                              <label for="email" >Email</label>
+                              <input type="email" name="email" id="email"  class="form-control" placeholder="Email">
                            </div>
                            <div class="form-group">
-                              <label for="password"  >Hasło</label>
-                              <input type="password" id="password" name="password"  class="form-control" placeholder="Wprowadź hasło">
+                              <label for="password" >Pasword</label>
+                              <input type="password" id="password" name="password"  class="form-control" placeholder="Password">
                            </div>
                            <div class="form-group">
                               
                            </div>
                            <div class="col-md-12 text-center ">
-                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Zaloguj się</button>
+                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Sing in</button>
                            </div>
 
                            
                            <div class="form-group">
-                              <p class="text-center">Nie masz konta? <a href="#" id="signup">Zarekjestruj się.</a></p>
+                              <p class="text-center">Want to join? <a href="rejestracja.php" id="signup">Sing up.</a></p>
                            </div>
                      </form>
-					 
-									<?php
-							if(isset($_SESSION['blad']))	echo $_SESSION['blad'];
-							
-							//echo $_SESSION['zalogowany'];
-							
-						?>
-						
-                 
+					  
 				</div>
 			
 

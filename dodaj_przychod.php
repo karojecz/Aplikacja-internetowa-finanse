@@ -20,30 +20,25 @@
 	else
 	{
 		
-	
-	
-	
-		if(isset($_POST['date']))
-		{
-			$wszystko_ok=true;
+	if(isset($_POST['date']))
+	{
+		$wszystko_ok=true;
 			$user_id=$_SESSION['id'];
 			$amount=$_POST['amount'];
 			$category=$_POST['kategoria'];
-			$rodzaj_platnosc=$_POST['platnosc'];
+			$date_of_income=$_POST['date'];
+			$income_comment=$_POST['comment'];
 			
-			$date_of_expense=$_POST['date'];
-			$expense_comment=$_POST['comment'];
-			$expense_comment = htmlentities($expense_comment, ENT_QUOTES, "UTF-8");
-			
+			$income_comment = htmlentities($income_comment, ENT_QUOTES, "UTF-8");
+			//$date_of_income = preg_replace("([^0-9-])", "", $_POST['date']);
+			//$amount=htmlentities($amount, ENT_QUOTES, "UTF-8");
 			
 			if(!is_numeric($amount))
 			{
 				$_SESSION['e_amount']="You need enter amount here";
 				$wszystko_ok=false;
 			}
-
-			//check date
-			$test_arr = explode('-', $date_of_expense);
+			$test_arr = explode('-', $date_of_income);
 			if ((count($test_arr) == 3) && (!empty($test_arr[2]))){
 				if ( ($test_arr[0]<2018 || $test_arr[0]>date('Y')) || (!checkdate($test_arr[1], $test_arr[2], $test_arr[0])))  
 				{
@@ -55,31 +50,28 @@
 								$_SESSION['e_date']="Enter date in format yyyy-mm-dd";
 				$wszystko_ok=false;
 			}
-				
-
-
 			
+			
+
 			
 			if($wszystko_ok==true)	
 			{
-				$wiersz=$polaczenie->query("SELECT * FROM payment_methods_assigned_to_users WHERE name='$rodzaj_platnosc' AND user_id=$user_id LIMIT 1");
-			$tablica_z_danymi=$wiersz->fetch_assoc();
-			$payment_method_assigned_to_user_id=$tablica_z_danymi["id"];
-			
-			
-			$wiersz=$polaczenie->query("SELECT * FROM expenses_category_assigned_to_users WHERE name='$category' AND user_id=$user_id LIMIT 1");
-			
-			$tablica_z_danymi=$wiersz->fetch_assoc();
-			$expense_category_assigned_to_user_id=$tablica_z_danymi["id"];
-			
+		
+		$wiersz=$polaczenie->query("SELECT * FROM incomes_category_assigned_to_users WHERE name='$category' AND user_id=$user_id LIMIT 1");
+		
+		$tablica_z_danymi=$wiersz->fetch_assoc();
+		$income_category_assigned_to_user_id=$tablica_z_danymi["id"];
+		
 
-				
-			$_sql=$polaczenie->query("INSERT INTO expenses VALUES(NULL,$user_id,$expense_category_assigned_to_user_id,$payment_method_assigned_to_user_id,$amount,'$date_of_expense','$expense_comment')");
-			$_SESSION['sucess']="Item has been added";
+			
+		$_sql=$polaczenie->query("INSERT INTO incomes VALUES(NULL,$user_id,$income_category_assigned_to_user_id,$amount,'$date_of_income','$income_comment')");
+		
+		$_SESSION['sucess']="Your item has been added";
+		
 			}
-						
-		$polaczenie->close();
-		}
+		
+	$polaczenie->close();
+	}
 	}
 	}
 		catch(Exception $e)
@@ -87,11 +79,6 @@
 			echo "blad serwera prosimy spróbować pózniej";
 			echo 'info:'.$e;
 		}
-	
-
-	
-	
-	
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +88,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-	<title>Dodaj wydatek</title>
+	<title>Dodaj przychod</title>
 	<meta name="description" content="dodaj wydatek">
 	<meta name="keywords" content="dodaj wydatek">
 	<meta name="author" content="Karol Jęczmionka">
@@ -147,17 +134,16 @@
 				
 				<div class="navbar-nav mr-auto">
 					
-						<h2> Add expense   </h2>
+						<h2> Add income   </h2>
 					
 					
 				</div>
 			
 				<form class="form-inline">
-					
-					<a href="menu_glowne.php" >
+					<a href="menu_glowne.php">
 					<button class="btn btn-outline-secondary mr-1" type="button">Main menu</button>
 					</a>
-					<a href="logout.php" >
+					<a href="logout.php">
 					<button class="btn btn-outline-secondary mr-1" type="button">logout</button>
 					</a>
 				</form>
@@ -177,33 +163,27 @@
 							
 	<form method="post">		
 	<div class="row " >
-		<?php if(isset($_SESSION['sucess'])){
+	<?php if(isset($_SESSION['sucess'])){
 	
 	echo '<script>alert("Your item has been added")</script>';
 	unset($_SESSION['sucess']);
 	} ?>
-
 	<div class="col-sm-12">
 		<fieldset>
 		<legend class="d-flex justify-content-start">Categorys:</legend>
 		<?php
 		
-			for($i =0; $i < $_SESSION['num_rows_expense_category_names']; $i++)
+			for($i =0; $i < $_SESSION['num_rows_income_category_names']; $i++)
 			{
-				
-				
-				echo '<div class="col-sm-3 float-sm-left">
+				echo '<div class="col-md-6  float-sm-left">
 				<div class="d-flex justify-content-start form-check">
-				<input  class="form-check-input" type="radio" id="'.$_SESSION['expense_category_names'][$i].'" name="kategoria" value="'.$_SESSION['expense_category_names'][$i].'" checked>
-				<label class="form-check-label" for="'.$_SESSION['expense_category_names'][$i].'">'.$_SESSION['expense_category_names'][$i].'</label></div></div>';
+				<input  class="form-check-input" type="radio" id="'.$_SESSION['income_category_names'][$i].'" name="kategoria" value="'.$_SESSION['income_category_names'][$i].'" checked>
+				<label class="form-check-label" for="'.$_SESSION['income_category_names'][$i].'">'.$_SESSION['income_category_names'][$i].'</label></div></div>';
 			}
-			
-		
 		?>
 		</fieldset>
 		</div>
-	
-					
+			
 		<div class="col-md-4 p-4 " >
 							
 							
@@ -212,21 +192,21 @@
 								 <label class="d-flex justify-content-start"  for="kwota">Amount:</label>
 								 <input class=" d-flex justify-content-start " type="text" name="amount" id="kwota">
 								 </div>
-								 <?php
+								<?php
+
 									if(isset($_SESSION['e_amount']))
 									{
 										echo'<div class="error">'.$_SESSION['e_amount'].'</div>';
 										unset($_SESSION['e_amount']);
 									}
 								?>
-					
-								 
 								
+					
 								 <div class="form-group ">
 								 <label class="d-flex justify-content-start" for="wprowadzDate">Date:</label>
 								  <input class="d-flex justify-content-start" id="wprowadzDate" type="text" name="date" onfocus="this.placeholder='data'" onblur="this.placeholder='data'" required name="wprowadzDate"> 
-								  </div>
-								 <?php
+								  </div>	
+								<?php
 
 									if(isset($_SESSION['e_date']))
 									{
@@ -234,34 +214,14 @@
 										unset($_SESSION['e_date']);
 									}
 								?>
-								  
-					<fieldset>
-					<legend class="d-flex justify-content-start"> Pay method:</legend>
-										
-										
-						<?php
-						for($i = 0; $i < $_SESSION['num_rows_pay_methods']; $i++)
-						{
-							echo 
-	
-							'<div class="d-flex justify-content-start form-check">
-							<input class="form-check-input" type="radio" id="'.$_SESSION['PAY_methods'][$i].'" name="platnosc" value="'.$_SESSION['PAY_methods'][$i].'" checked>
-													
-							<label class="form-check-label" for="'.$_SESSION['PAY_methods'][$i].'">'.$_SESSION['PAY_methods'][$i].'</label></div>';
-						}
-						?>
-										
-										
-		  
-					</fieldset>
 
-					
+
 		</div>
 					
 					<div class="col-md-8 p-4">
 						
 							<div class="form-group">
-							<label for="exampleFormControlTextarea2">Uwagi:</label>
+							<label for="exampleFormControlTextarea2">Comment:</label>
 							<textarea name='comment'class="form-control rounded-0" id="exampleFormControlTextarea2" rows="5"></textarea>
 							</div>
 					
@@ -269,18 +229,13 @@
 
 					<div class="col-sm-12 p-2">
 					
-							<button type="submit" class="btn btn-success btn-lg">Add expense</button>
-						<button type="button" class="btn btn-danger btn-lg">cancel</button>
+							<button type="submit" class="btn btn-success btn-lg">Add income</button>
+						<button type="reset" class="btn btn-danger btn-lg">cancel</button>
 					
 					</div>
-					
-
-				
 				</div>
 				</form >
-			</div>	
-			
-				
+			</div>		
 		</section>
 		
 	</main>

@@ -47,7 +47,7 @@
 			
 		$haslo_hash=password_hash($haslo1,PASSWORD_DEFAULT);	
 		
-		$sekret="6LcUD3ccAAAAABwU8tWoFF4aZsVlTwajjHhsFa7f";
+		$sekret="";
 		
 		$sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
 		

@@ -48,7 +48,7 @@
 				
 				<div class="navbar-nav mr-auto">
 					
-						<h2><?php echo "Witaj ".$_SESSION['user'];  ?></h2>	
+						<h2><?php echo "Hello ".$_SESSION['user'];  ?></h2>	
 				</div>
 			
 				<form class="form-inline">
@@ -69,9 +69,9 @@
 					<div class="col-md-6  p-2 ">
 					
 						<figure >
-						<a href="#">
+						<a  href="dodaj_przychod.php">
 							<i class="demo-icon icon-calendar-plus-o" ></i>
-							<p>Dodaj przychód</p>
+							<p>Add income</p>
 						</a>
 						</figure>
 					
@@ -81,7 +81,7 @@
 					
 						<figure>
 							<a  href="dodaj_wydatek.php"><i class="demo-icon icon-calendar-minus-o"></i>
-							<p>Dodaj wydatek</p>
+							<p>Add expense</p>
 							</a>
 						</figure>
 					
@@ -91,9 +91,9 @@
 					<div class="col-md-6  p-2">
 					
 						<figure>
-						<a  href="#">
+						<a   href="przegladaj_bilans.php">
 							<i class="demo-icon icon-money" ></i> 
-							<p>Przegladaj bilans</p>
+							<p>Your balance</p>
 						</a>
 						</figure>
 					
@@ -104,7 +104,7 @@
 						<figure>
 						<a  href="#">
 							<i class="demo-icon icon-wrench" ></i> 
-							<p>Ustawienia</p>
+							<p>Settings</p>
 						</a>	
 						</figure>
 					
